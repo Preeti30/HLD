@@ -2,7 +2,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TockenBucketService {
     private final ConcurrentHashMap<String, TockenBucket> cache = new ConcurrentHashMap<>();
-
+    //so that when we are deleting the buckets that are no longer needed and recreated them when needed, synch is needed
     public boolean checkAndAllowRequest(String clientId)
     {
         TockenBucket bucket = cache.get(clientId);
